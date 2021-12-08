@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let button = document.createElement("BUTTON");
+        let menu = [];
+        document.body.appendChild(button);
+        button.innerHTML = "Show";
+        button.onclick = function() {
+            if(button.innerHTML == "Show")
+            {
+                for(let i = 0; i < 5; i++)
+                {
+                    menu[i] = document.createElement("p");
+                    document.body.appendChild(menu[i]);
+                    menu[i].innerText = "Menu item";
+                }
+                button.innerHTML = "Hide";
+            }
+            else
+            {
+                for(let i = 0; i < 5; i++)
+                {
+                    menu[i].remove();
+                }
+                button.innerHTML = "Show";
+            }
+        }
+    </script>
+</body>
+</html>
