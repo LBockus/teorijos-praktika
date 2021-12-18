@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .inline{
+            display: inline;
+        }
+        #elem{
+            border: 1px solid black;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="changeTxt()">Change text</button>
+        <input id="txtInput">
+        <input type="color" id="txtColor">
+        <p class="inline">Font size: </p>
+        <select id="fontSize">
+            <option>12px</option>
+            <option>24px</option>
+            <option>36px</option>
+            <option>48px</option>
+            <option>60px</option>
+        </select>
+        <br>
+        <button onclick="changePadding()">Change padding size</button>
+        <input type="number" id="paddingSize">
+        <br>
+        <button onclick="changeBorder()">Change border</button>
+        <input type="number" id="borderSize">
+        <input type="color" id="borderColor">
+        <select id="borderStyle">
+            <option>none</option>
+            <option>solid</option>
+            <option>dotted</option>
+            <option>dashed</option>
+            <option>double</option>
+            <option>groove</option>
+            <option>ridge</option>
+            <option>inset</option>
+            <option>outset</option>
+        </select>
+    </div>
+    <div id = "elem">
+    </div>
+    <script>
+        let myElem = document.getElementById("elem");
+        let myTxt = document.getElementById("txtInput");
+        let myTxtColor = document.getElementById("txtColor");
+        let myTxtSize = document.getElementById("fontSize");
+        let myPaddingSize = document.getElementById("paddingSize");
+        myElem.innerText = "Text";
+        function changeTxt()
+        {
+            myElem.innerText = myTxt.value;
+            myElem.style.color = myTxtColor.value;
+            myElem.style.fontSize = myTxtSize.value;
+        }
+        function changePadding()
+        {
+            myElem.style.padding = myPaddingSize.value + "px";
+        }
+        function changeBorder()
+        {
+            myElem.style.borderWidth = document.getElementById("borderSize").value + "px";
+            myElem.style.borderColor = document.getElementById("borderColor").value;
+            myElem.style.borderStyle = document.getElementById("borderStyle").value;
+        }
+    </script>
+</body>
+</html>
